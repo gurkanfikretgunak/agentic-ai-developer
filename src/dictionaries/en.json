@@ -1,0 +1,270 @@
+{
+  "meta": {
+    "title": "MasterFabric Academy — Agentic AI Developer",
+    "description": "Official academic curriculum for designing, securing and shipping autonomous, collaborative AI agents end to end."
+  },
+  "header": {
+    "academy": "Academy",
+    "nav": {
+      "home": "Overview",
+      "why": "Why Agentic",
+      "certificate": "Certificate",
+      "apply": "Apply",
+      "guide": "Study Guide"
+    },
+    "docRef": "Doc Ref: MFA-AG-2026"
+  },
+  "hero": {
+    "kicker": "MasterFabric Academy // Curriculum Standards",
+    "title": "Agentic AI Developer Training",
+    "subtitle": "End-to-End Autonomous AI Agent Development Lifecycle & Study Guide",
+    "lead": "This document is the official academic curriculum guide covering the design, security and deployment of advanced, autonomous and collaborative AI agents running on Next.js 15, Go (Golang), iOS (Swift), Android (Kotlin), Terminal/CLI applications, Cursor IDE, frontier models (Composer 2.5, Claude Opus 4.8, Fable 5), locally hosted open-weight models and independent cloud servers (VPS).",
+    "ctaGuide": "Open the Study Guide",
+    "ctaWhy": "Why does this exist?",
+    "ctaApply": "Apply with AI",
+    "publisher": "Publisher",
+    "revision": "Revision",
+    "revisionValue": "v3.0 (Comprehensive Mobile Integration)",
+    "date": "Date",
+    "dateValue": "June 2026"
+  },
+  "evolution": {
+    "kicker": "Section 0 // The Great Transition",
+    "title": "Why the Agentic AI Developer?",
+    "subtitle": "How the software engineer arrived at this stage — the last five years, refracted.",
+    "prismCaption": "One input. A spectrum of autonomous output.",
+    "prismBadges": [
+      "Architecture & SDLC",
+      "Tool Use & MCP",
+      "Memory & State",
+      "Evaluation & Self-Healing",
+      "Multi-Agent Orchestration",
+      "Guardrails & HITL"
+    ],
+    "sunriseCaption": "Keep scrolling — a new horizon rises for the engineer.",
+    "outro": "The prism is the developer. The beam is intent. What comes out the other side is no longer a single line of code — it is a coordinated spectrum of autonomous agents. This curriculum trains the engineer who holds the prism.",
+    "eras": [
+      {
+        "year": "2021",
+        "title": "The Manual Era",
+        "description": "Developers write every line by hand. Autocomplete suggests tokens, not intent. Stack Overflow is the second monitor.",
+        "detail": "The toolchain was deterministic: linters, debuggers and rule-based IntelliSense. Knowledge lived in documentation and Q&A forums, and the feedback loop between an idea and working software was measured in hours. Editors like VS Code dominated the desktop — but they understood characters, not goals.",
+        "statLabel": "AI-assisted code in production codebases",
+        "statValue": 1,
+        "statSuffix": "%",
+        "sim": {
+          "title": "main.js — IDE (2021)",
+          "kind": "autocomplete",
+          "panelTitle": "IntelliSense",
+          "code": [
+            "async function fetchUsers() {",
+            "  const res = await fetch(\"/api/users\");",
+            "  return res.j"
+          ],
+          "extras": [
+            "json()      (method)",
+            "jsonp       (deprecated)",
+            "joinTeam    (unrelated)"
+          ],
+          "footnote": "Token-level autocomplete: the editor knows syntax, not intent."
+        }
+      },
+      {
+        "year": "2022",
+        "title": "The Copilot Moment",
+        "description": "Inline AI completion goes mainstream. Engineers start accepting whole functions. The keyboard remains the bottleneck.",
+        "detail": "GitHub Copilot put a language model inside the editor. Ghost text proposed entire functions from a single comment, and 'tab-tab programming' was born. Skeptics worried about licensing and correctness; pragmatists simply shipped faster. The editor learned to finish your sentence — but still not to start it.",
+        "statLabel": "Developers using AI completion weekly",
+        "statValue": 25,
+        "statSuffix": "%",
+        "sim": {
+          "title": "billing.ts — Copilot (2022)",
+          "kind": "ghost",
+          "panelTitle": "Ghost text",
+          "code": [
+            "// parse an invoice file and return its totals",
+            "async function parseInvoice(file: File) {"
+          ],
+          "extras": [
+            "  const text = await ocr(file);",
+            "  const totals = extractTotals(text);",
+            "  return { ...totals, currency: \"USD\" };",
+            "}"
+          ],
+          "footnote": "Press Tab to accept — whole functions proposed from one comment."
+        }
+      },
+      {
+        "year": "2023",
+        "title": "The Conversation",
+        "description": "Chat-first development emerges. LLMs explain, refactor and review. The developer becomes an editor of generated drafts.",
+        "detail": "ChatGPT-class models moved development into a dialogue. Engineers pasted stack traces and got explanations; refactors and test suites came back as drafts. Context windows grew, RAG appeared, and 'prompt engineering' entered job descriptions. The bottleneck shifted from typing speed to question quality.",
+        "statLabel": "Code review time reduced by AI tooling",
+        "statValue": 40,
+        "statSuffix": "%",
+        "sim": {
+          "title": "api.ts — Chat panel (2023)",
+          "kind": "chat",
+          "panelTitle": "AI Chat",
+          "code": [
+            "const users = fetchUsers();",
+            "return users.map((u) => u.name);"
+          ],
+          "extras": [
+            "Q: Why does this throw 'users.map is not a function'?",
+            "A: fetchUsers is async — it returns a Promise. Await it first:",
+            "A: const users = await fetchUsers();"
+          ],
+          "footnote": "Development becomes a dialogue: explain, refactor, review."
+        }
+      },
+      {
+        "year": "2024",
+        "title": "The Tool-Use Awakening",
+        "description": "Models stop talking and start doing: function calling, JSON schemas, retrieval, terminals. The IDE becomes an execution surface.",
+        "detail": "Function calling and JSON Schema gave models hands. The Model Context Protocol standardized how tools are described and shared. Editors like Cursor let the model read files, run terminals and apply edits — under supervision. The unit of work changed from 'suggestion' to 'verified action'.",
+        "statLabel": "Enterprise pilots involving tool-calling agents",
+        "statValue": 60,
+        "statSuffix": "%",
+        "sim": {
+          "title": "Cursor — Tool calls (2024)",
+          "kind": "tools",
+          "panelTitle": "Tool execution",
+          "code": ["TASK: fix the failing checkout test"],
+          "extras": [
+            "▸ read_file(src/checkout.ts)          ok",
+            "▸ run_terminal(npm test)              exit 1",
+            "▸ edit_file(src/checkout.ts)          +4 −1",
+            "▸ run_terminal(npm test)              exit 0 ✓"
+          ],
+          "footnote": "The model stops describing the fix and starts performing it."
+        }
+      },
+      {
+        "year": "2025",
+        "title": "The Agentic Shift",
+        "description": "Long-horizon agents plan, execute and self-correct across repos, servers and devices. Human-in-the-loop becomes an architecture, not an apology.",
+        "detail": "Long-horizon agents arrived: they planned multi-step work, kept persistent memory, recovered from their own failures and paused for approval at dangerous boundaries. Background agents worked while engineers slept. Code review, CI triage and dependency upgrades became delegations rather than chores.",
+        "statLabel": "Teams shipping agent-driven workflows",
+        "statValue": 78,
+        "statSuffix": "%",
+        "sim": {
+          "title": "Agent — plan & self-correct (2025)",
+          "kind": "agent",
+          "panelTitle": "Plan",
+          "code": ["GOAL: eliminate the race condition in queue.go"],
+          "extras": [
+            "1. Reproduce flaky test (12 runs)        ✓",
+            "2. Patch: guard pop() with mutex         ✓",
+            "3. Re-run suite                          ✗ deadlock",
+            "   ↳ self-correct: RWMutex + defer       …",
+            "4. Re-run suite (40 runs)                ✓",
+            "5. Await human approval to merge         ⏸"
+          ],
+          "footnote": "Failure is no longer terminal — it is input for the next attempt."
+        }
+      },
+      {
+        "year": "2026",
+        "title": "The Orchestrator",
+        "description": "The engineer no longer writes most of the code — they design, constrain and audit fleets of agents. A new discipline demands a new curriculum.",
+        "detail": "Today the senior engineer runs a fleet: an orchestrator decomposes intent, workers implement in parallel, judges evaluate output, and guardrails keep a human in the loop for irreversible actions. Architecture, constraints and verification — not syntax — are the craft. That craft is exactly what this curriculum teaches.",
+        "statLabel": "Engineering roles requiring agent orchestration skills",
+        "statValue": 92,
+        "statSuffix": "%",
+        "sim": {
+          "title": "Orchestrator — fleet view (2026)",
+          "kind": "fleet",
+          "panelTitle": "Agents",
+          "code": ["INTENT: ship the invoice OCR feature to staging"],
+          "extras": [
+            "AGENT-01  backend   go gateway + schema      ✓ done",
+            "AGENT-02  tests     golden traces            ● running",
+            "AGENT-03  mobile    swift edge client        ● running",
+            "AGENT-04  docs      a4 study guide           ✓ done",
+            "GUARDRAIL deploy    awaiting HITL approval   ⏸"
+          ],
+          "footnote": "The engineer designs, constrains and audits — the fleet executes."
+        }
+      }
+    ]
+  },
+  "metrics": {
+    "title": "Curriculum Weight Distribution",
+    "subtitle": "Relative exam and project weight of each domain, sourced live from the markdown curriculum.",
+    "weightLabel": "weight"
+  },
+  "curriculum": {
+    "title": "Curriculum Domains",
+    "subtitle": "Every section below is rendered from markdown source files. Edit the markdown — the site updates on the next request.",
+    "open": "Read in A4 format"
+  },
+  "certificate": {
+    "kicker": "Accreditation // MFA-CERT-2026",
+    "title": "Sample Certificate",
+    "subtitle": "Issued upon completion of all curriculum domains. The module list below is generated live from the markdown curriculum — publish a new module and it automatically appears on every future certificate.",
+    "dynamicNote": "Dynamic modules — read from /content at issue time",
+    "docTitle": "Certificate of Completion",
+    "program": "Agentic AI Developer Training",
+    "presentedTo": "This certifies that",
+    "sampleName": "Ali Yurtsever",
+    "completedText": "has successfully completed the following curriculum modules",
+    "nextModule": "Next module — appears here automatically",
+    "issuedLabel": "Issue date",
+    "issuedValue": "June 2026",
+    "refLabel": "Credential ID",
+    "refValue": "MFA-AG-2026-0001",
+    "directorLabel": "Program Director",
+    "directorName": "MasterFabric Academy",
+    "weightWord": "weight"
+  },
+  "guide": {
+    "title": "Study Guide — A4 Academic Edition",
+    "print": "PDF / Print Format",
+    "pageWord": "Page",
+    "infrastructure": "Infrastructure built in this module",
+    "weightWord": "Weight"
+  },
+  "apply": {
+    "kicker": "Admissions // 2026 Cohorts",
+    "title": "Contact & Apply",
+    "subtitle": "Participants who wish to join must submit their information. Fill in the form — send it by email, or let an AI agent assemble and verify your application for you.",
+    "cohort1Label": "Cohort 1",
+    "cohort1Date": "July 1, 2026",
+    "cohort2Label": "Cohort 2",
+    "cohort2Date": "September 2026",
+    "capacity": "Max capacity: 25 seats per cohort",
+    "emailSubject": "Agentic AI Developer Training — Application",
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "Ali Yurtsever",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "role": "Role / Company",
+      "rolePlaceholder": "Senior Engineer @ Acme",
+      "experience": "Experience",
+      "experiencePlaceholder": "6 yrs — Go, TypeScript, a bit of Swift",
+      "cohort": "Preferred cohort",
+      "motivation": "Why do you want to join?",
+      "motivationPlaceholder": "I want to ship multi-agent systems in production...",
+      "send": "Apply via Email",
+      "copy": "Copy prompt",
+      "copied": "Copied!",
+      "cursor": "Open in Cursor",
+      "claude": "Open in Claude",
+      "chatgpt": "Open in ChatGPT",
+      "gemini": "Open in Gemini",
+      "deeplinkTitle": "Apply through an AI agent",
+      "deeplinkHint": "These deeplinks build an application prompt from your details and hand it straight to the agent — it verifies your information and drafts the email to academy@masterfabric.co for you. The prompt templates live in the project's /prompts reference folder."
+    }
+  },
+  "footer": {
+    "line": "academy.masterfabric.co is a MasterFabric subsidiary.",
+    "sourceLabel": "Source code",
+    "sourceUrl": "https://github.com/masterfabric/agentic-ai-developer",
+    "sourceText": "github.com/masterfabric/agentic-ai-developer"
+  },
+  "localeSwitcher": {
+    "label": "Language"
+  }
+}

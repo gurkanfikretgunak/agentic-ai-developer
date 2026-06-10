@@ -1,26 +1,244 @@
 @import "tailwindcss";
 
+/*
+ * Strict monochrome design system.
+ * Every visible color on the site derives from pure black and pure white.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #ffffff;
+  --paper: #000000;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-lora);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* ---------- A4 sheet simulation ---------- */
+.a4-sheet {
+  width: 210mm;
+  max-width: 100%;
+  min-height: 297mm;
+  padding: 18mm;
+  margin: 2rem auto;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 24px 60px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .print-hidden {
+    display: none !important;
+  }
+  .a4-sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    padding: 15mm;
+    border: none;
+    box-shadow: none;
+    background: #ffffff !important;
+    color: #000000 !important;
+    page-break-after: always;
+  }
+  .a4-sheet * {
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.3) !important;
+    background: transparent !important;
+  }
+  .a4-sheet .mermaid-frame svg {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
+
+/* ---------- Markdown article (monochrome academic) ---------- */
+.md-article {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.md-article h2 {
+  font-family: var(--font-lora), Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 1.5rem 0 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  padding-bottom: 0.35rem;
+}
+
+.md-article h3 {
+  font-family: var(--font-lora), Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 1.1rem 0 0.4rem;
+}
+
+.md-article p {
+  margin: 0.6rem 0;
+  text-align: justify;
+}
+
+.md-article strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.md-article ul,
+.md-article ol {
+  margin: 0.6rem 0 0.6rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.md-article ul li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.md-article ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.md-article code {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.05rem 0.3rem;
+  border-radius: 2px;
+}
+
+.md-article pre code {
+  border: none;
+  padding: 0;
+}
+
+.md-article blockquote {
+  border-left: 2px solid #ffffff;
+  padding: 0.5rem 0.9rem;
+  margin: 0.9rem 0;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.78rem;
+}
+
+.md-article table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.7rem;
+  margin: 0.9rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.md-article th {
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.md-article td {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  vertical-align: top;
+}
+
+/* ---------- RGB accent button (apply CTAs) ----------
+ * The element itself is the animated gradient frame (2px padding);
+ * .rgb-button-inner is the black panel that carries the label.
+ */
+.rgb-button {
+  position: relative;
+  display: inline-block;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    #ff4d6d,
+    #ff9e44,
+    #ffe45e,
+    #5ef58f,
+    #54c8ff,
+    #b07cff,
+    #ff4d6d
+  );
+  background-size: 300% 100%;
+  animation: rgb-slide 4s linear infinite;
+}
+
+.rgb-button::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  z-index: -1;
+  background: inherit;
+  background-size: inherit;
+  animation: inherit;
+  filter: blur(12px);
+  opacity: 0.5;
+}
+
+.rgb-button-inner {
+  display: block;
+  background: #000000;
+  transition: background 0.2s ease;
+}
+
+.rgb-button:hover .rgb-button-inner {
+  background: rgba(0, 0, 0, 0.72);
+}
+
+@keyframes rgb-slide {
+  to {
+    background-position: 300% 0;
+  }
+}
+
+/* ---------- Mermaid frames ---------- */
+.mermaid-frame {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.mermaid-frame svg {
+  max-width: 100%;
+  height: auto;
 }

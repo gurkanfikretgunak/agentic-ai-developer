@@ -1,0 +1,270 @@
+{
+  "meta": {
+    "title": "MasterFabric Academy — Agentic AI Developer",
+    "description": "Otonom ve işbirlikçi yapay zeka ajanlarının uçtan uca tasarımı, güvenliği ve yayına alınması için resmi akademik müfredat."
+  },
+  "header": {
+    "academy": "Academy",
+    "nav": {
+      "home": "Genel Bakış",
+      "why": "Neden Agentic",
+      "certificate": "Sertifika",
+      "apply": "Başvuru",
+      "guide": "Çalışma Rehberi"
+    },
+    "docRef": "Doküman Ref: MFA-AG-2026"
+  },
+  "hero": {
+    "kicker": "MasterFabric Academy // Müfredat Standartları",
+    "title": "Agentic AI Developer Training",
+    "subtitle": "Uçtan Uca Otonom Yapay Zeka Ajanları Geliştirme Yaşam Döngüsü & Çalışma Rehberi",
+    "lead": "Bu doküman; Next.js 15, Go (Golang), iOS (Swift), Android (Kotlin), Terminal/CLI Uygulamaları, Cursor IDE, sınır modeller (Composer 2.5, Claude Opus 4.8, Fable 5), lokal barındırılan açık ağırlıklı modeller ve bağımsız bulut sunucuları (VPS) üzerinde çalışan ileri düzey, otonom ve işbirlikçi yapay zeka ajanlarının tasarımı, güvenliği ve yayına alınması süreçlerini içeren resmi akademik müfredat kılavuzudur.",
+    "ctaGuide": "Çalışma Rehberini Aç",
+    "ctaWhy": "Bu eğitim neden var?",
+    "ctaApply": "AI ile Başvur",
+    "publisher": "Yayıncı",
+    "revision": "Revizyon",
+    "revisionValue": "v3.0 (Kapsamlı Mobil Entegrasyon)",
+    "date": "Tarih",
+    "dateValue": "Haziran 2026"
+  },
+  "evolution": {
+    "kicker": "Bölüm 0 // Büyük Geçiş",
+    "title": "Neden Agentic AI Developer?",
+    "subtitle": "Yazılımcının bu evreye gelişi — son beş yıl, bir prizmadan kırılarak.",
+    "prismCaption": "Tek bir girdi. Otonom çıktılardan oluşan bir spektrum.",
+    "prismBadges": [
+      "Mimari & SDLC",
+      "Tool Use & MCP",
+      "Bellek & State",
+      "Değerlendirme & Self-Healing",
+      "Çoklu Ajan Orkestrasyonu",
+      "Guardrails & HITL"
+    ],
+    "sunriseCaption": "Kaydırmaya devam edin — mühendis için yeni bir ufuk doğuyor.",
+    "outro": "Prizma, geliştiricinin kendisidir. Işın ise niyet. Diğer taraftan çıkan şey artık tek bir satır kod değil — koordineli, otonom bir ajan spektrumudur. Bu müfredat, prizmayı elinde tutan mühendisi yetiştirir.",
+    "eras": [
+      {
+        "year": "2021",
+        "title": "Manuel Çağ",
+        "description": "Geliştiriciler her satırı elle yazar. Otomatik tamamlama niyeti değil, token önerir. Stack Overflow ikinci monitördür.",
+        "detail": "Araç zinciri deterministikti: linter'lar, debugger'lar ve kural tabanlı IntelliSense. Bilgi, dokümantasyonda ve soru-cevap forumlarında yaşıyordu; bir fikir ile çalışan yazılım arasındaki geri bildirim döngüsü saatlerle ölçülüyordu. VS Code gibi editörler masaüstüne hükmediyordu — ama karakterleri anlıyorlardı, hedefleri değil.",
+        "statLabel": "Üretim kod tabanlarında AI destekli kod oranı",
+        "statValue": 1,
+        "statSuffix": "%",
+        "sim": {
+          "title": "main.js — IDE (2021)",
+          "kind": "autocomplete",
+          "panelTitle": "IntelliSense",
+          "code": [
+            "async function fetchUsers() {",
+            "  const res = await fetch(\"/api/users\");",
+            "  return res.j"
+          ],
+          "extras": [
+            "json()      (metot)",
+            "jsonp       (kullanım dışı)",
+            "joinTeam    (alakasız)"
+          ],
+          "footnote": "Token seviyesinde tamamlama: editör sözdizimini bilir, niyeti değil."
+        }
+      },
+      {
+        "year": "2022",
+        "title": "Copilot Anı",
+        "description": "Satır içi AI tamamlama ana akım olur. Mühendisler artık fonksiyonların tamamını kabul eder. Darboğaz hâlâ klavyedir.",
+        "detail": "GitHub Copilot, dil modelini editörün içine taşıdı. Ghost text tek bir yorumdan koca fonksiyonlar önerdi ve 'tab-tab programlama' doğdu. Şüpheciler lisans ve doğruluk kaygısı taşıdı; pragmatikler ise daha hızlı yayınladı. Editör cümlenizi bitirmeyi öğrendi — ama hâlâ başlatmayı değil.",
+        "statLabel": "Haftalık AI tamamlama kullanan geliştiriciler",
+        "statValue": 25,
+        "statSuffix": "%",
+        "sim": {
+          "title": "billing.ts — Copilot (2022)",
+          "kind": "ghost",
+          "panelTitle": "Ghost text",
+          "code": [
+            "// fatura dosyasını işle ve toplamları döndür",
+            "async function parseInvoice(file: File) {"
+          ],
+          "extras": [
+            "  const text = await ocr(file);",
+            "  const totals = extractTotals(text);",
+            "  return { ...totals, currency: \"TRY\" };",
+            "}"
+          ],
+          "footnote": "Kabul etmek için Tab — tek bir yorumdan koca fonksiyon önerisi."
+        }
+      },
+      {
+        "year": "2023",
+        "title": "Diyalog Dönemi",
+        "description": "Sohbet öncelikli geliştirme doğar. LLM'ler açıklar, refactor eder, review yapar. Geliştirici, üretilen taslakların editörüne dönüşür.",
+        "detail": "ChatGPT sınıfı modeller geliştirmeyi bir diyaloğa dönüştürdü. Mühendisler stack trace yapıştırıp açıklama aldı; refactor'lar ve test setleri taslak olarak geri geldi. Bağlam pencereleri büyüdü, RAG ortaya çıktı ve 'prompt mühendisliği' iş ilanlarına girdi. Darboğaz, yazma hızından soru kalitesine kaydı.",
+        "statLabel": "AI araçlarıyla azalan kod inceleme süresi",
+        "statValue": 40,
+        "statSuffix": "%",
+        "sim": {
+          "title": "api.ts — Sohbet paneli (2023)",
+          "kind": "chat",
+          "panelTitle": "AI Sohbet",
+          "code": [
+            "const users = fetchUsers();",
+            "return users.map((u) => u.name);"
+          ],
+          "extras": [
+            "S: Bu neden 'users.map is not a function' hatası veriyor?",
+            "C: fetchUsers asenkron — bir Promise döndürür. Önce await edin:",
+            "C: const users = await fetchUsers();"
+          ],
+          "footnote": "Geliştirme bir diyaloğa dönüşür: açıkla, refactor et, incele."
+        }
+      },
+      {
+        "year": "2024",
+        "title": "Tool-Use Uyanışı",
+        "description": "Modeller konuşmayı bırakıp yapmaya başlar: function calling, JSON şemaları, retrieval, terminaller. IDE bir yürütme yüzeyine dönüşür.",
+        "detail": "Function calling ve JSON Schema modellere el verdi. Model Context Protocol, araçların nasıl tanımlanıp paylaşılacağını standartlaştırdı. Cursor gibi editörler modelin dosya okumasına, terminal çalıştırmasına ve gözetim altında düzenleme yapmasına izin verdi. İşin birimi 'öneri'den 'doğrulanmış eylem'e dönüştü.",
+        "statLabel": "Tool-calling ajan içeren kurumsal pilotlar",
+        "statValue": 60,
+        "statSuffix": "%",
+        "sim": {
+          "title": "Cursor — Tool çağrıları (2024)",
+          "kind": "tools",
+          "panelTitle": "Tool yürütme",
+          "code": ["GÖREV: başarısız checkout testini düzelt"],
+          "extras": [
+            "▸ read_file(src/checkout.ts)          ok",
+            "▸ run_terminal(npm test)              exit 1",
+            "▸ edit_file(src/checkout.ts)          +4 −1",
+            "▸ run_terminal(npm test)              exit 0 ✓"
+          ],
+          "footnote": "Model düzeltmeyi tarif etmeyi bırakır, bizzat uygular."
+        }
+      },
+      {
+        "year": "2025",
+        "title": "Agentic Kırılma",
+        "description": "Uzun ufuklu ajanlar; repolar, sunucular ve cihazlar arasında planlar, çalıştırır ve kendini düzeltir. Human-in-the-loop bir özür değil, bir mimari olur.",
+        "detail": "Uzun ufuklu ajanlar geldi: çok adımlı işleri planladılar, kalıcı bellek tuttular, kendi hatalarından toparlandılar ve tehlikeli sınırlarda onay için durdular. Arka plan ajanları mühendisler uyurken çalıştı. Kod inceleme, CI triyajı ve bağımlılık güncellemeleri angarya olmaktan çıkıp delegasyona dönüştü.",
+        "statLabel": "Ajan güdümlü iş akışı yayınlayan ekipler",
+        "statValue": 78,
+        "statSuffix": "%",
+        "sim": {
+          "title": "Ajan — planla & kendini düzelt (2025)",
+          "kind": "agent",
+          "panelTitle": "Plan",
+          "code": ["HEDEF: queue.go içindeki race condition'ı gider"],
+          "extras": [
+            "1. Kararsız testi tekrarla (12 koşu)     ✓",
+            "2. Yama: pop() çağrısını mutex'le koru   ✓",
+            "3. Test setini yeniden çalıştır          ✗ deadlock",
+            "   ↳ kendini düzelt: RWMutex + defer     …",
+            "4. Test setini yeniden çalıştır (40)     ✓",
+            "5. Merge için insan onayını bekle        ⏸"
+          ],
+          "footnote": "Hata artık son değil — bir sonraki denemenin girdisidir."
+        }
+      },
+      {
+        "year": "2026",
+        "title": "Orkestratör",
+        "description": "Mühendis artık kodun çoğunu yazmaz — ajan filolarını tasarlar, sınırlar ve denetler. Yeni disiplin, yeni bir müfredat gerektirir.",
+        "detail": "Bugün kıdemli mühendis bir filo yönetiyor: orkestratör niyeti ayrıştırıyor, worker'lar paralel uyguluyor, judge'lar çıktıyı değerlendiriyor ve guardrail'ler geri döndürülemez eylemlerde insanı döngüde tutuyor. Zanaat artık sözdizimi değil; mimari, kısıtlar ve doğrulama. Bu müfredatın öğrettiği zanaat tam olarak bu.",
+        "statLabel": "Ajan orkestrasyonu becerisi isteyen mühendislik rolleri",
+        "statValue": 92,
+        "statSuffix": "%",
+        "sim": {
+          "title": "Orkestratör — filo görünümü (2026)",
+          "kind": "fleet",
+          "panelTitle": "Ajanlar",
+          "code": ["NİYET: fatura OCR özelliğini staging'e çıkar"],
+          "extras": [
+            "AGENT-01  backend   go gateway + şema        ✓ bitti",
+            "AGENT-02  testler   golden traces            ● çalışıyor",
+            "AGENT-03  mobil     swift edge istemcisi     ● çalışıyor",
+            "AGENT-04  doküman   a4 çalışma rehberi       ✓ bitti",
+            "GUARDRAIL deploy    HITL onayı bekleniyor    ⏸"
+          ],
+          "footnote": "Mühendis tasarlar, sınırlar ve denetler — filo uygular."
+        }
+      }
+    ]
+  },
+  "metrics": {
+    "title": "Müfredat Ağırlık Dağılımı",
+    "subtitle": "Her domain'in göreli sınav ve proje ağırlığı; doğrudan markdown müfredatından canlı okunur.",
+    "weightLabel": "ağırlık"
+  },
+  "curriculum": {
+    "title": "Müfredat Domain'leri",
+    "subtitle": "Aşağıdaki tüm bölümler markdown kaynak dosyalarından render edilir. Markdown'ı düzenleyin — site bir sonraki istekte güncellenir.",
+    "open": "A4 formatında oku"
+  },
+  "certificate": {
+    "kicker": "Akreditasyon // MFA-CERT-2026",
+    "title": "Örnek Sertifika",
+    "subtitle": "Tüm müfredat domain'leri tamamlandığında düzenlenir. Aşağıdaki modül listesi markdown müfredatından canlı üretilir — yeni bir modül yayınlayın, gelecekte düzenlenen her sertifikada otomatik olarak görünür.",
+    "dynamicNote": "Dinamik modüller — düzenleme anında /content klasöründen okunur",
+    "docTitle": "Tamamlama Sertifikası",
+    "program": "Agentic AI Developer Training",
+    "presentedTo": "Bu belge ile",
+    "sampleName": "Ali Yurtsever",
+    "completedText": "aşağıdaki müfredat modüllerini başarıyla tamamlamıştır",
+    "nextModule": "Sıradaki modül — buraya otomatik eklenir",
+    "issuedLabel": "Düzenlenme tarihi",
+    "issuedValue": "Haziran 2026",
+    "refLabel": "Sertifika No",
+    "refValue": "MFA-AG-2026-0001",
+    "directorLabel": "Program Direktörü",
+    "directorName": "MasterFabric Academy",
+    "weightWord": "ağırlık"
+  },
+  "guide": {
+    "title": "Çalışma Rehberi — A4 Akademik Baskı",
+    "print": "PDF / Yazıcı Formatı",
+    "pageWord": "Sayfa",
+    "infrastructure": "Bu modülde üzerine koyacağımız altyapı",
+    "weightWord": "Ağırlık"
+  },
+  "apply": {
+    "kicker": "Kayıt // 2026 Dönemleri",
+    "title": "İletişim & Başvuru",
+    "subtitle": "Bu eğitime katılmak isteyen kişilerin bilgilerini iletmesi gerekmektedir. Formu doldurun — e-posta ile gönderin ya da başvurunuzu sizin yerinize bir AI ajanının derleyip doğrulamasına izin verin.",
+    "cohort1Label": "1. Dönem",
+    "cohort1Date": "1 Temmuz 2026",
+    "cohort2Label": "2. Dönem",
+    "cohort2Date": "Eylül 2026",
+    "capacity": "Maksimum kapasite: Dönem başına 25 kişi",
+    "emailSubject": "Agentic AI Developer Training — Başvuru",
+    "form": {
+      "name": "Ad Soyad",
+      "namePlaceholder": "Ali Yurtsever",
+      "email": "E-posta",
+      "emailPlaceholder": "siz@sirket.com",
+      "role": "Rol / Şirket",
+      "rolePlaceholder": "Kıdemli Mühendis @ Acme",
+      "experience": "Deneyim",
+      "experiencePlaceholder": "6 yıl — Go, TypeScript, biraz Swift",
+      "cohort": "Tercih edilen dönem",
+      "motivation": "Neden katılmak istiyorsunuz?",
+      "motivationPlaceholder": "Üretimde çoklu ajan sistemleri yayınlamak istiyorum...",
+      "send": "E-posta ile Başvur",
+      "copy": "Promptu kopyala",
+      "copied": "Kopyalandı!",
+      "cursor": "Cursor'da Aç",
+      "claude": "Claude'da Aç",
+      "chatgpt": "ChatGPT'de Aç",
+      "gemini": "Gemini'de Aç",
+      "deeplinkTitle": "AI ajanı üzerinden başvurun",
+      "deeplinkHint": "Bu deeplink'ler bilgilerinizden bir başvuru promptu üretir ve doğrudan ajana teslim eder — ajan bilgilerinizi doğrular ve academy@masterfabric.co adresine gidecek e-postayı sizin için taslaklar. Prompt şablonları projenin /prompts referans klasöründe yaşar."
+    }
+  },
+  "footer": {
+    "line": "academy.masterfabric.co bir MasterFabric iştirakidir.",
+    "sourceLabel": "Kaynak kod",
+    "sourceUrl": "https://github.com/masterfabric/agentic-ai-developer",
+    "sourceText": "github.com/masterfabric/agentic-ai-developer"
+  },
+  "localeSwitcher": {
+    "label": "Dil"
+  }
+}
