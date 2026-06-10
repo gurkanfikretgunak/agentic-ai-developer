@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { AcademyBadge } from "@/components/brand/AcademyBadge";
 import { MasterFabricLogo } from "@/components/brand/MasterFabricLogo";
 
@@ -27,6 +28,102 @@ export interface CertificateCopy {
 export interface CertModule {
   title: string;
   weight?: number;
+}
+
+/** The recipient name types itself in once the certificate scrolls into view. */
+function TypewriterName({ name }: { name: string }) {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [count, setCount] = useState(0);
+  const done = count >= name.length;
+
+  useEffect(() => {
+    if (!inView || done) return;
+    const t = setTimeout(() => setCount((c) => c + 1), count === 0 ? 500 : 85);
+    return () => clearTimeout(t);
+  }, [inView, count, done]);
+
+  return (
+    <p
+      ref={ref}
+      className="mt-2 text-2xl italic text-white sm:text-3xl"
+      style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
+    >
+      {name.slice(0, count)}
+      <motion.span
+        className="ml-0.5 inline-block h-[0.9em] w-[2px] translate-y-[0.12em] bg-white/80"
+        animate={{ opacity: [1, 0, 1] }}
+        transition={{ duration: 0.9, repeat: Infinity }}
+        aria-hidden
+      />
+      {/* Reserve space so layout doesn't shift while typing */}
+      <span className="invisible absolute">{name}</span>
+    </p>
+  );
+}
+
+/** Live verification seal: rotating dashed ring + cycling check statuses. */
+const SEAL_STATES = ["HASH MATCH", "ED25519 SIG", "ISSUER: MFA"];
+
+function VerificationSeal() {
+  const [state, setState] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => setState((s) => (s + 1) % SEAL_STATES.length), 2400);
+    return () => clearInterval(t);
+  }, []);
+
+  return (
+    <div
+      aria-hidden
+      className="absolute right-5 top-5 hidden flex-col items-center gap-1.5 sm:flex"
+    >
+      <div className="relative h-14 w-14">
+        <svg viewBox="0 0 56 56" className="cert-seal-ring absolute inset-0 h-full w-full">
+          <circle
+            cx="28"
+            cy="28"
+            r="25"
+            fill="none"
+            stroke="#ffffff"
+            strokeOpacity="0.45"
+            strokeWidth="1"
+            strokeDasharray="4 5"
+          />
+        </svg>
+        <svg viewBox="0 0 56 56" className="absolute inset-0 h-full w-full">
+          <circle
+            cx="28"
+            cy="28"
+            r="18"
+            fill="none"
+            stroke="#ffffff"
+            strokeOpacity="0.2"
+            strokeWidth="1"
+          />
+        </svg>
+        <motion.span
+          className="absolute inset-0 flex items-center justify-center text-sm text-white"
+          animate={{ opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        >
+          ✓
+        </motion.span>
+      </div>
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={state}
+          className="font-mono text-[8px] uppercase tracking-widest text-white/45"
+          initial={{ opacity: 0, y: 4 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -4 }}
+          transition={{ duration: 0.3 }}
+        >
+          {SEAL_STATES[state]} ✓
+        </motion.span>
+      </AnimatePresence>
+    </div>
+  );
 }
 
 /**
@@ -84,6 +181,12 @@ export function CertificateSection({
             {/* Watermark */}
             <MasterFabricLogo className="pointer-events-none absolute -bottom-16 -right-16 h-72 w-80 text-white opacity-[0.04]" />
 
+            {/* Periodic verification scan sweeping down the document */}
+            <div aria-hidden className="cert-scan pointer-events-none absolute inset-x-0 h-24" />
+
+            {/* Live digital seal */}
+            <VerificationSeal />
+
             <div className="relative flex flex-col items-center text-center">
               <AcademyBadge size={88} className="border border-white/20" />
 
@@ -101,12 +204,7 @@ export function CertificateSection({
               <p className="mt-8 text-xs uppercase tracking-widest text-white/45">
                 {copy.presentedTo}
               </p>
-              <p
-                className="mt-2 text-2xl italic text-white sm:text-3xl"
-                style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
-              >
-                {copy.sampleName}
-              </p>
+              <TypewriterName name={copy.sampleName} />
               <p className="mt-2 text-xs text-white/45">{copy.completedText}</p>
 
               {/* Dynamic module list */}

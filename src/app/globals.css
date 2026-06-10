@@ -296,6 +296,201 @@ body {
   }
 }
 
+/* ---------- Certificate simulation (scan sweep + rotating seal) ---------- */
+.cert-scan {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.06) 45%,
+    rgba(255, 255, 255, 0.09) 50%,
+    rgba(255, 255, 255, 0.06) 55%,
+    transparent
+  );
+  animation: cert-scan 8s ease-in-out infinite;
+}
+
+@keyframes cert-scan {
+  0% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  46% {
+    transform: translateY(820%);
+    opacity: 1;
+  }
+  52% {
+    transform: translateY(880%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(880%);
+    opacity: 0;
+  }
+}
+
+.cert-seal-ring {
+  animation: cert-seal-rotate 14s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes cert-seal-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-scan,
+  .cert-seal-ring {
+    animation: none;
+  }
+  .cert-scan {
+    opacity: 0;
+  }
+}
+
+/* ---------- Sunrise finale (stars + turning rays) ---------- */
+.sunrise-star {
+  opacity: 0.15;
+  animation-name: sunrise-twinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.sunrise-rays {
+  animation: sunrise-rotate 80s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes sunrise-twinkle {
+  0%,
+  100% {
+    opacity: 0.12;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes sunrise-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sunrise-star,
+  .sunrise-rays {
+    animation: none;
+  }
+}
+
+/* ---------- Enterprise card abstract objects (alive on hover) ---------- */
+.ent-objs {
+  opacity: 0.3;
+  transform: translateX(6px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.instructor-card:hover .ent-objs {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ent-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.65rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.4s ease, background-color 0.4s ease;
+}
+
+.instructor-card:hover .ent-tile {
+  border-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.ent-tile-label {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  transition: color 0.4s ease;
+}
+
+.instructor-card:hover .ent-tile-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Animations idle until the card is hovered */
+.ent-anim {
+  animation-play-state: paused;
+}
+
+.instructor-card:hover .ent-anim {
+  animation-play-state: running;
+}
+
+.ent-spin {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: ent-rotate 6s linear infinite;
+}
+
+.ent-sweep {
+  transform-origin: 28px 28px;
+  animation: ent-rotate 3.2s linear infinite;
+}
+
+.ent-pulse {
+  animation: ent-pulse 1.8s ease-in-out infinite;
+}
+
+.ent-blink {
+  animation: ent-blink 1.4s steps(2, jump-none) infinite;
+}
+
+@keyframes ent-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ent-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes ent-blink {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ent-objs,
+  .ent-anim {
+    transition: none;
+    animation: none;
+  }
+}
+
 /* ---------- Instructor card (animated corner brackets on hover) ---------- */
 .instructor-card {
   position: relative;
