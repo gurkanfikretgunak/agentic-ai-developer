@@ -5,6 +5,9 @@ import { MasterFabricLogo } from "@/components/brand/MasterFabricLogo";
 import { CertificateSection } from "@/components/certificate/CertificateSection";
 import { WeightBars } from "@/components/charts/WeightBars";
 import { EvolutionSection } from "@/components/evolution/EvolutionSection";
+import { OpsHighlights } from "@/components/hero/OpsHighlights";
+import { TechLead } from "@/components/hero/TechLead";
+import { InstructorCard } from "@/components/instructor/InstructorCard";
 import { getDocs, getDomainWeights } from "@/lib/content";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import { getApplicationPromptTemplate } from "@/lib/prompts";
@@ -47,10 +50,13 @@ export default async function LandingPage({
           <p className="mt-5 max-w-2xl text-lg font-medium text-white/70">
             {dict.hero.subtitle}
           </p>
+
+          <InstructorCard copy={dict.hero.instructor} />
+
           <div className="mt-6 h-1 w-20 bg-white" />
-          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/55">
-            {dict.hero.lead}
-          </p>
+          <TechLead text={dict.hero.lead} locale={locale} />
+
+          <OpsHighlights copy={dict.hero.ops} />
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
@@ -93,7 +99,7 @@ export default async function LandingPage({
       </section>
 
       {/* ---------- Why Agentic (Pink Floyd transition) ---------- */}
-      <EvolutionSection copy={dict.evolution} />
+      <EvolutionSection copy={dict.evolution} locale={locale} />
 
       {/* ---------- Metrics ---------- */}
       <section className="mx-auto max-w-6xl px-6 py-24">

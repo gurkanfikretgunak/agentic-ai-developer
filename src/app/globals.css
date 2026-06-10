@@ -27,9 +27,324 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
+/* Local development warning strip (yellow–black construction tape) */
+.dev-banner {
+  position: relative;
+  overflow: hidden;
+  background: #ffd600;
+  border-bottom: 3px solid #000000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  animation: dev-banner-drop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.dev-banner::before,
+.dev-banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #ffd600,
+    #ffd600 8px,
+    #000000 8px,
+    #000000 16px
+  );
+  background-size: 22.6px 100%;
+  animation: dev-banner-stripes 1.2s linear infinite;
+}
+
+.dev-banner::before {
+  top: 0;
+}
+
+.dev-banner::after {
+  bottom: 0;
+  animation-direction: reverse;
+}
+
+.dev-banner-text {
+  position: relative;
+  z-index: 1;
+  color: #000000;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+/* Shine sweep across the text every few seconds */
+.dev-banner-text::after {
+  content: "";
+  position: absolute;
+  inset: -4px -16px;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 60%
+  );
+  background-size: 250% 100%;
+  pointer-events: none;
+  animation: dev-banner-shine 3.5s ease-in-out infinite;
+}
+
+.dev-banner-icon {
+  display: inline-block;
+  transform-origin: 50% 80%;
+  animation: dev-banner-wiggle 2s ease-in-out infinite;
+}
+
+@keyframes dev-banner-drop {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes dev-banner-stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 22.6px 0;
+  }
+}
+
+@keyframes dev-banner-shine {
+  0%,
+  60% {
+    background-position: 125% 0;
+  }
+  100% {
+    background-position: -25% 0;
+  }
+}
+
+@keyframes dev-banner-wiggle {
+  0%,
+  70%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  75% {
+    transform: rotate(-12deg) scale(1.15);
+  }
+  85% {
+    transform: rotate(10deg) scale(1.15);
+  }
+  95% {
+    transform: rotate(-6deg) scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dev-banner,
+  .dev-banner::before,
+  .dev-banner::after,
+  .dev-banner-text::after,
+  .dev-banner-icon {
+    animation: none;
+  }
+}
+
 ::selection {
   background: var(--ink);
   color: var(--paper);
+}
+
+/* ---------- Tech term hover cards in the hero lead ---------- */
+.tech-term {
+  position: relative;
+  display: inline;
+}
+
+.tech-term-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+  text-underline-offset: 3px;
+  cursor: help;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.tech-term:hover .tech-term-label {
+  color: #ffffff;
+  text-decoration-color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-tip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  z-index: 60;
+  display: block;
+  width: 300px;
+  max-width: 80vw;
+  padding: 1rem;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 16px 48px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 6px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0s linear 0.25s;
+  pointer-events: none;
+}
+
+/* Small arrow pointing at the term */
+.tech-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border: 5px solid transparent;
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Reveal after a short hover dwell */
+.tech-term:hover .tech-tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  transition-delay: 0.45s;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-tip {
+    transition: none;
+  }
+}
+
+/* ---------- Ops highlight cards (DevOps / SecOps / LLMOps) ---------- */
+.ops-card {
+  position: relative;
+  cursor: help;
+  transition: background-color 0.3s ease;
+}
+
+.ops-card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.ops-card-title {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.ops-card:hover .ops-card-title {
+  text-decoration-color: rgba(255, 255, 255, 0.9);
+}
+
+.ops-tip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  z-index: 60;
+  width: 300px;
+  max-width: 84vw;
+  padding: 1rem;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 16px 48px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 6px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0s linear 0.25s;
+  pointer-events: none;
+}
+
+.ops-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border: 5px solid transparent;
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+.ops-card:hover .ops-tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  transition-delay: 0.35s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ops-tip {
+    transition: none;
+  }
+}
+
+/* ---------- Instructor card (animated corner brackets on hover) ---------- */
+.instructor-card {
+  position: relative;
+  transition: border-color 0.4s ease, background-color 0.4s ease;
+}
+
+.instructor-card::before,
+.instructor-card::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.35s ease, height 0.35s ease, opacity 0.35s ease;
+}
+
+.instructor-card::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--ink);
+  border-left: 2px solid var(--ink);
+}
+
+.instructor-card::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--ink);
+  border-right: 2px solid var(--ink);
+}
+
+.instructor-card:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.instructor-card:hover::before,
+.instructor-card:hover::after {
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .instructor-card,
+  .instructor-card::before,
+  .instructor-card::after {
+    transition: none;
+  }
 }
 
 /* ---------- A4 sheet simulation ---------- */

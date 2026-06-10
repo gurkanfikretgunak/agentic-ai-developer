@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useSyncExternalStore } from "react";
 import { Turnstile } from "@/components/security/Turnstile";
+import { isLocalDevelopment } from "@/lib/env";
 
 const STORAGE_KEY = "mfa-human";
 
@@ -15,6 +16,7 @@ function subscribe(listener: () => void) {
   return () => listeners.delete(listener);
 }
 function getSnapshot() {
+  if (isLocalDevelopment()) return true;
   return sessionStorage.getItem(STORAGE_KEY) === "1";
 }
 function getServerSnapshot() {

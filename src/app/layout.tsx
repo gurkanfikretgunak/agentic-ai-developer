@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Lora } from "next/font/google";
+import { DevBanner } from "@/components/dev/DevBanner";
 import { SiteGate } from "@/components/security/SiteGate";
 import "./globals.css";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <DevBanner />
         <SiteGate />
         {children}
       </body>

@@ -37,7 +37,7 @@
     "kicker": "MasterFabric Academy // Curriculum Standards",
     "title": "Agentic AI Developer Training",
     "subtitle": "End-to-End Autonomous AI Agent Development Lifecycle & Study Guide",
-    "lead": "This document is the official academic curriculum guide covering the design, security and deployment of advanced, autonomous and collaborative AI agents running on Next.js 15, Go (Golang), iOS (Swift), Android (Kotlin), Terminal/CLI applications, Cursor IDE, frontier models (Composer 2.5, Claude Opus 4.8, Fable 5), locally hosted open-weight models and independent cloud servers (VPS).",
+    "lead": "This document is the official academic curriculum guide covering the design, security and deployment of advanced, autonomous and collaborative AI agents running on Next.js 15, Go (Golang), iOS (Swift), Android (Kotlin), Terminal/CLI applications, Cursor IDE, OpenCode, GitHub Copilot, frontier models (Composer 2.5, Claude Opus 4.8, Fable 5), locally hosted open-weight models and independent cloud servers (VPS).",
     "ctaGuide": "Open the Study Guide",
     "ctaWhy": "Why does this exist?",
     "ctaApply": "Apply with AI",
@@ -45,7 +45,37 @@
     "revision": "Revision",
     "revisionValue": "v3.0 (Comprehensive Mobile Integration)",
     "date": "Date",
-    "dateValue": "June 2026"
+    "dateValue": "June 2026",
+    "instructor": {
+      "kicker": "Instructor",
+      "role": "Lead Instructor",
+      "followers": "Followers",
+      "repos": "Repos"
+    },
+    "ops": {
+      "kicker": "DevOps + SecOps + LLMOps",
+      "statement": "The AI SDLC is no longer the classic delivery pipeline. When agents write, test and ship the code, operations refract into three interlocking disciplines — each covered in depth by this curriculum.",
+      "items": [
+        {
+          "name": "DevOps",
+          "tag": "ship & run",
+          "short": "CI/CD, IaC and progressive delivery for code that agents write and ship around the clock.",
+          "long": "Pipelines, infrastructure-as-code, container runtimes, canary rollouts and instant rollbacks on independent VPS targets. The curriculum treats deployment as an agent-driven loop: the fleet builds, the gates verify, every rollout is reversible by design — and a human approves anything that is not."
+        },
+        {
+          "name": "SecOps",
+          "tag": "guard & verify",
+          "short": "Guardrails, secret hygiene and threat models for systems where a model is also a developer.",
+          "long": "Secret management, SAST and dependency scanning, prompt-injection and tool-abuse defense, least-privilege agent permissions and HITL gates before irreversible actions. You learn to threat-model not just the application but the agents building it — with full audit trails."
+        },
+        {
+          "name": "LLMOps",
+          "tag": "evaluate & route",
+          "short": "Eval harnesses, golden traces, token budgets and model routing across frontier and local models.",
+          "long": "Model selection and routing across Composer 2.5, Claude Opus 4.8, Fable 5 and open-weight local models; eval suites and golden traces as regression tests; reasoning-chain observability; cost and latency SLOs; and when to reach for RAG, fine-tuning or pure prompting."
+        }
+      ]
+    }
   },
   "evolution": {
     "kicker": "Section 0 // The Great Transition",

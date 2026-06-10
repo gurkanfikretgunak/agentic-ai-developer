@@ -2,6 +2,7 @@
 
 import { animate, motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { FleetSdlcSimulation } from "@/components/evolution/FleetSdlcSimulation";
 import { IdeSimulation, type IdeSim } from "@/components/evolution/IdeSimulation";
 import type { PrismBadge } from "@/components/evolution/PrismBadges";
 import { PrismScene } from "@/components/evolution/PrismScene";
@@ -52,7 +53,15 @@ function AnimatedStat({ value, suffix }: { value: number; suffix: string }) {
   );
 }
 
-function EraPanel({ era, index }: { era: Era; index: number }) {
+function EraPanel({
+  era,
+  index,
+  locale,
+}: {
+  era: Era;
+  index: number;
+  locale: "en" | "tr";
+}) {
   const fromLeft = index % 2 === 0;
 
   return (
@@ -108,7 +117,8 @@ function EraPanel({ era, index }: { era: Era; index: number }) {
         </div>
       </motion.div>
 
-      {/* Era IDE simulation — how the editor felt that year */}
+      {/* Era IDE simulation — how the editor felt that year.
+          2026 gets the full live AI SDLC fleet simulation. */}
       <motion.div
         className="md:order-3 md:col-span-2"
         initial={{ opacity: 0, y: 40 }}
@@ -116,13 +126,27 @@ function EraPanel({ era, index }: { era: Era; index: number }) {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <IdeSimulation sim={era.sim} />
+        {era.sim.kind === "fleet" ? (
+          <FleetSdlcSimulation
+            title={era.sim.title}
+            footnote={era.sim.footnote}
+            locale={locale}
+          />
+        ) : (
+          <IdeSimulation sim={era.sim} />
+        )}
       </motion.div>
     </div>
   );
 }
 
-export function EvolutionSection({ copy }: { copy: EvolutionCopy }) {
+export function EvolutionSection({
+  copy,
+  locale,
+}: {
+  copy: EvolutionCopy;
+  locale: "en" | "tr";
+}) {
   return (
     <section id="why-agentic" className="relative overflow-hidden border-y border-white/15">
       <div className="mx-auto max-w-6xl px-6 pt-24">
@@ -155,7 +179,7 @@ export function EvolutionSection({ copy }: { copy: EvolutionCopy }) {
         <div className="relative mt-12">
           <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-white/20 to-transparent md:block" />
           {copy.eras.map((era, index) => (
-            <EraPanel key={era.year} era={era} index={index} />
+            <EraPanel key={era.year} era={era} index={index} locale={locale} />
           ))}
         </div>
       </div>

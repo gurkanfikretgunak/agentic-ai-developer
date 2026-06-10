@@ -37,7 +37,7 @@
     "kicker": "MasterFabric Academy // Müfredat Standartları",
     "title": "Agentic AI Developer Training",
     "subtitle": "Uçtan Uca Otonom Yapay Zeka Ajanları Geliştirme Yaşam Döngüsü & Çalışma Rehberi",
-    "lead": "Bu doküman; Next.js 15, Go (Golang), iOS (Swift), Android (Kotlin), Terminal/CLI Uygulamaları, Cursor IDE, sınır modeller (Composer 2.5, Claude Opus 4.8, Fable 5), lokal barındırılan açık ağırlıklı modeller ve bağımsız bulut sunucuları (VPS) üzerinde çalışan ileri düzey, otonom ve işbirlikçi yapay zeka ajanlarının tasarımı, güvenliği ve yayına alınması süreçlerini içeren resmi akademik müfredat kılavuzudur.",
+    "lead": "Bu doküman; Next.js 15, Go (Golang), iOS (Swift), Android (Kotlin), Terminal/CLI Uygulamaları, Cursor IDE, OpenCode, GitHub Copilot, sınır modeller (Composer 2.5, Claude Opus 4.8, Fable 5), lokal barındırılan açık ağırlıklı modeller ve bağımsız bulut sunucuları (VPS) üzerinde çalışan ileri düzey, otonom ve işbirlikçi yapay zeka ajanlarının tasarımı, güvenliği ve yayına alınması süreçlerini içeren resmi akademik müfredat kılavuzudur.",
     "ctaGuide": "Çalışma Rehberini Aç",
     "ctaWhy": "Bu eğitim neden var?",
     "ctaApply": "AI ile Başvur",
@@ -45,7 +45,37 @@
     "revision": "Revizyon",
     "revisionValue": "v3.0 (Kapsamlı Mobil Entegrasyon)",
     "date": "Tarih",
-    "dateValue": "Haziran 2026"
+    "dateValue": "Haziran 2026",
+    "instructor": {
+      "kicker": "Eğitmen",
+      "role": "Baş Eğitmen",
+      "followers": "Takipçi",
+      "repos": "Repo"
+    },
+    "ops": {
+      "kicker": "DevOps + SecOps + LLMOps",
+      "statement": "AI SDLC artık klasik teslimat hattı değil. Kodu ajanlar yazıp test edip yayına aldığında operasyon, birbirine kenetli üç disipline kırılır — her biri bu müfredatta derinlemesine işlenir.",
+      "items": [
+        {
+          "name": "DevOps",
+          "tag": "yayınla & işlet",
+          "short": "Ajanların 7/24 yazıp yayınladığı kod için CI/CD, IaC ve kademeli dağıtım.",
+          "long": "Pipeline'lar, infrastructure-as-code, konteyner runtime'ları, bağımsız VPS hedeflerinde canary dağıtım ve anında geri alma. Müfredat dağıtımı ajan güdümlü bir döngü olarak ele alır: filo üretir, kapılar doğrular, her rollout tasarımı gereği geri alınabilir — geri alınamayanı ise insan onaylar."
+        },
+        {
+          "name": "SecOps",
+          "tag": "koru & doğrula",
+          "short": "Modelin aynı zamanda geliştirici olduğu sistemler için guardrail'ler, secret hijyeni ve tehdit modelleri.",
+          "long": "Secret yönetimi, SAST ve bağımlılık taraması, prompt-injection ve araç istismarı savunması, en az yetkili ajan izinleri ve geri döndürülemez eylemler öncesi HITL kapıları. Sadece uygulamayı değil, onu inşa eden ajanları da tehdit modellemeyi öğrenirsiniz — eksiksiz denetim iziyle."
+        },
+        {
+          "name": "LLMOps",
+          "tag": "değerlendir & yönlendir",
+          "short": "Sınır ve lokal modeller arasında eval düzenekleri, golden trace'ler, token bütçeleri ve model yönlendirme.",
+          "long": "Composer 2.5, Claude Opus 4.8, Fable 5 ve açık ağırlıklı lokal modeller arasında model seçimi ve yönlendirme; regresyon testi olarak eval süitleri ve golden trace'ler; akıl yürütme zinciri gözlemlenebilirliği; maliyet ve gecikme SLO'ları; RAG, fine-tuning ya da salt prompting kararları."
+        }
+      ]
+    }
   },
   "evolution": {
     "kicker": "Bölüm 0 // Büyük Geçiş",

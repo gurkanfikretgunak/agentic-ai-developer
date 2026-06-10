@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { DEV_TURNSTILE_BYPASS, isLocalDevelopment } from "@/lib/env";
 
 export const TURNSTILE_SITE_KEY = "0x4AAAAAADiKN-vVhRAOKLxK";
 
@@ -57,6 +58,7 @@ export function Turnstile({
   siteKey?: string;
   className?: string;
 }) {
+  const isDev = isLocalDevelopment();
   const containerRef = useRef<HTMLDivElement>(null);
   const onVerifyRef = useRef(onVerify);
 
@@ -65,6 +67,11 @@ export function Turnstile({
   }, [onVerify]);
 
   useEffect(() => {
+    if (isDev) {
+      onVerifyRef.current(DEV_TURNSTILE_BYPASS);
+      return;
+    }
+
     let widgetId: string | null = null;
     let cancelled = false;
 
@@ -85,7 +92,17 @@ export function Turnstile({
         window.turnstile.remove(widgetId);
       }
     };
-  }, [siteKey]);
+  }, [isDev, siteKey]);
+
+  if (isDev) {
+    return (
+      <p
+        className={`font-mono text-[10px] uppercase tracking-widest text-white/35${className ? ` ${className}` : ""}`}
+      >
+        Local dev — Turnstile skipped
+      </p>
+    );
+  }
 
   return <div ref={containerRef} className={className} />;
 }
