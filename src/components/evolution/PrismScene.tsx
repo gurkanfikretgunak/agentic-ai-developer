@@ -8,6 +8,8 @@ import {
   type MotionValue,
 } from "framer-motion";
 import { useRef } from "react";
+import { PrismBadges, type PrismBadge } from "@/components/evolution/PrismBadges";
+import { ORIGIN, SPECTRUM } from "@/components/evolution/spectrum";
 
 /**
  * Dark-Side-of-the-Moon prism: a liquid-glass prism with a moving specular
@@ -16,19 +18,9 @@ import { useRef } from "react";
  *
  * Scroll progress is passed through a spring so the draw stays smooth and
  * stable while scrolling. Bands stagger in bottom-to-top, each with its own
- * final length, and a color-matched SDLC badge row sits under the prism in
- * band order.
+ * final length, and a color-matched interactive SDLC badge row sits under
+ * the prism in band order.
  */
-const SPECTRUM = [
-  { color: "#ff4d6d", y2: 88, x2: 800 },
-  { color: "#ff9e44", y2: 112, x2: 752 },
-  { color: "#ffe45e", y2: 136, x2: 788 },
-  { color: "#5ef58f", y2: 160, x2: 732 },
-  { color: "#54c8ff", y2: 184, x2: 768 },
-  { color: "#b07cff", y2: 208, x2: 712 },
-];
-
-const ORIGIN = { x: 452, y: 146 };
 
 /** Stagger window per band, ordered bottom (violet) → top (red). */
 function bandRange(index: number): [number, number] {
@@ -88,7 +80,7 @@ export function PrismScene({
   badges,
 }: {
   caption: string;
-  badges: string[];
+  badges: PrismBadge[];
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -235,30 +227,8 @@ export function PrismScene({
         </motion.g>
       </svg>
 
-      {/* Color-matched SDLC badges, in band order (top red → bottom violet) */}
-      <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
-        {badges.map((label, i) => {
-          const band = SPECTRUM[i] ?? SPECTRUM[SPECTRUM.length - 1];
-          const fromBottom = SPECTRUM.length - 1 - i;
-          return (
-            <motion.span
-              key={label}
-              className="flex items-center gap-1.5 border bg-black px-2.5 py-1 font-mono text-[9px] uppercase tracking-widest text-white/70"
-              style={{ borderColor: `${band.color}59` }}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45, delay: 0.25 + fromBottom * 0.12 }}
-            >
-              <span
-                className="h-1.5 w-1.5 shrink-0 rounded-full"
-                style={{ background: band.color }}
-              />
-              {label}
-            </motion.span>
-          );
-        })}
-      </div>
+      {/* Interactive color-matched SDLC badges, in band order */}
+      <PrismBadges badges={badges} />
 
       <motion.p
         className="mt-4 text-center font-mono text-[11px] uppercase tracking-[0.3em] text-white/45"

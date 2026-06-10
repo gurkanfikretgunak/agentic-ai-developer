@@ -3,6 +3,7 @@
 import { animate, motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { IdeSimulation, type IdeSim } from "@/components/evolution/IdeSimulation";
+import type { PrismBadge } from "@/components/evolution/PrismBadges";
 import { PrismScene } from "@/components/evolution/PrismScene";
 import { SunriseScene } from "@/components/evolution/SunriseScene";
 
@@ -22,7 +23,7 @@ export interface EvolutionCopy {
   title: string;
   subtitle: string;
   prismCaption: string;
-  prismBadges: string[];
+  prismBadges: PrismBadge[];
   sunriseCaption: string;
   outro: string;
   eras: Era[];

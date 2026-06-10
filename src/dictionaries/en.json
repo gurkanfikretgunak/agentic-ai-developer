@@ -1,7 +1,26 @@
 {
   "meta": {
     "title": "MasterFabric Academy — Agentic AI Developer",
-    "description": "Official academic curriculum for designing, securing and shipping autonomous, collaborative AI agents end to end."
+    "description": "Official academic curriculum for designing, securing and shipping autonomous, collaborative AI agents end to end.",
+    "keywords": [
+      "agentic AI developer",
+      "autonomous AI agents",
+      "AI agent development training",
+      "agentic SDLC",
+      "multi-agent orchestration",
+      "Model Context Protocol",
+      "MCP",
+      "Go agent development",
+      "Next.js AI agents",
+      "iOS AI agents",
+      "Android AI agents",
+      "CLI agents",
+      "AI engineering curriculum",
+      "MasterFabric Academy"
+    ],
+    "ogTitle": "Agentic AI Developer Training — MasterFabric Academy",
+    "ogDescription": "Train to design, constrain and audit fleets of autonomous AI agents: the end-to-end agentic SDLC across Go, Next.js, iOS, Android and CLI — official MasterFabric Academy curriculum.",
+    "siteName": "MasterFabric Academy"
   },
   "header": {
     "academy": "Academy",
@@ -34,12 +53,36 @@
     "subtitle": "How the software engineer arrived at this stage — the last five years, refracted.",
     "prismCaption": "One input. A spectrum of autonomous output.",
     "prismBadges": [
-      "Architecture & SDLC",
-      "Tool Use & MCP",
-      "Memory & State",
-      "Evaluation & Self-Healing",
-      "Multi-Agent Orchestration",
-      "Guardrails & HITL"
+      {
+        "label": "Architecture & SDLC",
+        "domain": "Domain 1 · 15%",
+        "description": "Every agent system begins as a topology decision — router, ReAct or plan-and-execute. This stage maps intent onto architecture and encodes agent behavior contracts before a single line is generated."
+      },
+      {
+        "label": "Tool Use & MCP",
+        "domain": "Domain 2 · 20%",
+        "description": "JSON Schemas give the model hands: every action becomes a typed, validated tool call. MCP standardizes how tools are described, shared and executed safely inside the sandbox."
+      },
+      {
+        "label": "Memory & State",
+        "domain": "Domain 3 · 10%",
+        "description": "Session context is ephemeral; vector memory is not. Checkpointed state machines let an interrupted agent resume exactly where it stopped, with semantic recall from pgvector."
+      },
+      {
+        "label": "Evaluation & Self-Healing",
+        "domain": "Domain 4 · 15%",
+        "description": "Quality is measured, never assumed: LLM-as-a-judge rubrics score every run. Failures feed the loop — the agent reads its own stderr, forms a hypothesis and repairs itself."
+      },
+      {
+        "label": "Multi-Agent Orchestration",
+        "domain": "Domain 5 · 15%",
+        "description": "An orchestrator decomposes intent while workers execute in parallel over queues. Live agent state streams to the Next.js dashboard via SSE and WebSockets."
+      },
+      {
+        "label": "Guardrails & HITL",
+        "domain": "Domain 6 · 10%",
+        "description": "Irreversible actions block until a human approves. Input/output firewalls, budget limits and circuit breakers keep the autonomous fleet accountable."
+      }
     ],
     "sunriseCaption": "Keep scrolling — a new horizon rises for the engineer.",
     "outro": "The prism is the developer. The beam is intent. What comes out the other side is no longer a single line of code — it is a coordinated spectrum of autonomous agents. This curriculum trains the engineer who holds the prism.",
@@ -254,6 +297,7 @@
       "claude": "Open in Claude",
       "chatgpt": "Open in ChatGPT",
       "gemini": "Open in Gemini",
+      "verifyHint": "Verify you are human to unlock sending",
       "deeplinkTitle": "Apply through an AI agent",
       "deeplinkHint": "These deeplinks build an application prompt from your details and hand it straight to the agent — it verifies your information and drafts the email to academy@masterfabric.co for you. The prompt templates live in the project's /prompts reference folder."
     }

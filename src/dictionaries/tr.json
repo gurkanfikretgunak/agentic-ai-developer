@@ -1,7 +1,26 @@
 {
   "meta": {
     "title": "MasterFabric Academy — Agentic AI Developer",
-    "description": "Otonom ve işbirlikçi yapay zeka ajanlarının uçtan uca tasarımı, güvenliği ve yayına alınması için resmi akademik müfredat."
+    "description": "Otonom ve işbirlikçi yapay zeka ajanlarının uçtan uca tasarımı, güvenliği ve yayına alınması için resmi akademik müfredat.",
+    "keywords": [
+      "agentic AI developer",
+      "otonom yapay zeka ajanları",
+      "AI ajan geliştirme eğitimi",
+      "agentic SDLC",
+      "çoklu ajan orkestrasyonu",
+      "Model Context Protocol",
+      "MCP",
+      "Go ajan geliştirme",
+      "Next.js yapay zeka ajanları",
+      "iOS yapay zeka ajanları",
+      "Android yapay zeka ajanları",
+      "CLI ajanları",
+      "yapay zeka mühendisliği müfredatı",
+      "MasterFabric Academy"
+    ],
+    "ogTitle": "Agentic AI Developer Eğitimi — MasterFabric Academy",
+    "ogDescription": "Otonom yapay zeka ajan filolarını tasarlamayı, sınırlamayı ve denetlemeyi öğrenin: Go, Next.js, iOS, Android ve CLI üzerinde uçtan uca agentic SDLC — resmi MasterFabric Academy müfredatı.",
+    "siteName": "MasterFabric Academy"
   },
   "header": {
     "academy": "Academy",
@@ -34,12 +53,36 @@
     "subtitle": "Yazılımcının bu evreye gelişi — son beş yıl, bir prizmadan kırılarak.",
     "prismCaption": "Tek bir girdi. Otonom çıktılardan oluşan bir spektrum.",
     "prismBadges": [
-      "Mimari & SDLC",
-      "Tool Use & MCP",
-      "Bellek & State",
-      "Değerlendirme & Self-Healing",
-      "Çoklu Ajan Orkestrasyonu",
-      "Guardrails & HITL"
+      {
+        "label": "Mimari & SDLC",
+        "domain": "Domain 1 · %15",
+        "description": "Her ajan sistemi bir topoloji kararıyla başlar — router, ReAct veya plan-and-execute. Bu aşama niyeti mimariye eşler ve tek satır üretilmeden önce ajan davranış sözleşmelerini tanımlar."
+      },
+      {
+        "label": "Tool Use & MCP",
+        "domain": "Domain 2 · %20",
+        "description": "JSON şemaları modele el verir: her eylem tipli ve doğrulanmış bir tool çağrısına dönüşür. MCP, araçların sandbox içinde güvenle tanımlanma, paylaşılma ve çalıştırılma biçimini standartlaştırır."
+      },
+      {
+        "label": "Bellek & State",
+        "domain": "Domain 3 · %10",
+        "description": "Oturum bağlamı geçicidir; vektör bellek değil. Checkpoint'li durum makineleri, yarıda kesilen ajanın pgvector'dan anlamsal geri çağırma ile tam kaldığı yerden devam etmesini sağlar."
+      },
+      {
+        "label": "Değerlendirme & Self-Healing",
+        "domain": "Domain 4 · %15",
+        "description": "Kalite varsayılmaz, ölçülür: LLM-as-a-judge rubrikleri her koşuyu puanlar. Hatalar döngüyü besler — ajan kendi stderr çıktısını okur, hipotez kurar ve kendini onarır."
+      },
+      {
+        "label": "Çoklu Ajan Orkestrasyonu",
+        "domain": "Domain 5 · %15",
+        "description": "Orkestratör niyeti ayrıştırır, worker'lar kuyruklar üzerinden paralel çalışır. Canlı ajan durumu SSE ve WebSocket ile Next.js paneline akar."
+      },
+      {
+        "label": "Guardrails & HITL",
+        "domain": "Domain 6 · %10",
+        "description": "Geri döndürülemez eylemler insan onayına kadar bloklanır. Giriş/çıkış filtreleri, bütçe limitleri ve devre kesiciler otonom filoyu hesap verebilir kılar."
+      }
     ],
     "sunriseCaption": "Kaydırmaya devam edin — mühendis için yeni bir ufuk doğuyor.",
     "outro": "Prizma, geliştiricinin kendisidir. Işın ise niyet. Diğer taraftan çıkan şey artık tek bir satır kod değil — koordineli, otonom bir ajan spektrumudur. Bu müfredat, prizmayı elinde tutan mühendisi yetiştirir.",
@@ -254,6 +297,7 @@
       "claude": "Claude'da Aç",
       "chatgpt": "ChatGPT'de Aç",
       "gemini": "Gemini'de Aç",
+      "verifyHint": "Göndermeyi açmak için insan olduğunuzu doğrulayın",
       "deeplinkTitle": "AI ajanı üzerinden başvurun",
       "deeplinkHint": "Bu deeplink'ler bilgilerinizden bir başvuru promptu üretir ve doğrudan ajana teslim eder — ajan bilgilerinizi doğrular ve academy@masterfabric.co adresine gidecek e-postayı sizin için taslaklar. Prompt şablonları projenin /prompts referans klasöründe yaşar."
     }
