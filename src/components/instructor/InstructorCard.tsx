@@ -50,6 +50,9 @@ export interface InstructorCopy {
   role: string;
   followers: string;
   repos: string;
+  becomePrefix: string;
+  becomeLink: string;
+  becomeSubject: string;
 }
 
 function GitHubMark({ className }: { className?: string }) {
@@ -130,6 +133,16 @@ export async function InstructorCard({ copy }: { copy: InstructorCopy }) {
           </a>
         </div>
       </div>
+
+      <p className="mt-2 font-mono text-[10px] tracking-wide text-white/35">
+        {copy.becomePrefix}{" "}
+        <a
+          href={`mailto:academy@masterfabric.co?subject=${encodeURIComponent(copy.becomeSubject)}`}
+          className="text-white/60 underline decoration-white/25 underline-offset-2 transition hover:text-white hover:decoration-white"
+        >
+          {copy.becomeLink}
+        </a>
+      </p>
     </div>
   );
 }

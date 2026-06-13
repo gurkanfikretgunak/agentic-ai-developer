@@ -50,7 +50,10 @@
       "kicker": "Instructor",
       "role": "Lead Instructor",
       "followers": "Followers",
-      "repos": "Repos"
+      "repos": "Repos",
+      "becomePrefix": "Want to become an instructor? Reach out to",
+      "becomeLink": "MasterFabric Academy",
+      "becomeSubject": "Instructor Application — MasterFabric Academy"
     },
     "enterprise": {
       "kicker": "Enterprise & Large Organizations",

@@ -50,7 +50,10 @@
       "kicker": "Eğitmen",
       "role": "Baş Eğitmen",
       "followers": "Takipçi",
-      "repos": "Repo"
+      "repos": "Repo",
+      "becomePrefix": "Eğitmen olmak ister misiniz? İletişime geçin:",
+      "becomeLink": "MasterFabric Academy",
+      "becomeSubject": "Eğitmen Başvurusu — MasterFabric Academy"
     },
     "enterprise": {
       "kicker": "Kurumsal & Büyük Organizasyonlar",
