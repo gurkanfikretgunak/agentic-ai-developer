@@ -18,6 +18,11 @@ export function MarkdownArticle({ body }: { body: string }) {
             if (match?.[1] === "mermaid") {
               return <MermaidDiagram code={String(children).trim()} />;
             }
+            // Inline `badge:LABEL` tokens render as monochrome status badges.
+            const text = String(children);
+            if (!match && text.startsWith("badge:")) {
+              return <span className="md-badge">{text.slice(6).trim()}</span>;
+            }
             return <code className={className}>{children}</code>;
           },
           pre(props) {

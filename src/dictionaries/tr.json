@@ -50,7 +50,10 @@
       "kicker": "Eğitmen",
       "role": "Baş Eğitmen",
       "followers": "Takipçi",
-      "repos": "Repo"
+      "repos": "Repo",
+      "becomePrefix": "Eğitmen olmak ister misiniz? İletişime geçin:",
+      "becomeLink": "MasterFabric Academy",
+      "becomeSubject": "Eğitmen Başvurusu — MasterFabric Academy"
     },
     "enterprise": {
       "kicker": "Kurumsal & Büyük Organizasyonlar",
@@ -345,7 +348,10 @@
     }
   },
   "footer": {
-    "line": "academy.masterfabric.co bir MasterFabric iştirakidir.",
+    "linePrefix": "academy.masterfabric.co bir ",
+    "lineBrand": "MasterFabric",
+    "lineSuffix": " iştirakidir.",
+    "brandUrl": "https://masterfabric.co",
     "sourceLabel": "Kaynak kod",
     "sourceUrl": "https://github.com/masterfabric/agentic-ai-developer",
     "sourceText": "github.com/masterfabric/agentic-ai-developer"

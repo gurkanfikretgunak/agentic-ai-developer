@@ -39,7 +39,7 @@ Müfredat model-çoğulcudur: ajanlar bir soyutlama katmanına karşı inşa edi
 
 - **Composer 2.5** — Cursor içinde hızlı agentic kodlama döngüleri; varsayılan editör-yerleşik worker modeli
 - **Claude Opus 4.8** — derin muhakeme, mimari kararlar, uzun bağlam incelemesi ve değerlendirme (LLM-as-a-judge)
-- **Fable 5** — uzun ufuklu otonom görev yürütme ve çoklu ajan orkestrasyon rolleri
+- **Fable 5** `badge:Geçiş Kapatıldı` — uzun ufuklu otonom görev yürütme ve çoklu ajan orkestrasyon rolleri; geçişi kullanıma kapatılmıştır ve yeni kullanım için artık erişime açık değildir
 - **Lokal & açık ağırlıklı modeller** — Ollama / llama.cpp ile quantize modeller (GGUF) çalıştırma, VPS üzerinde vLLM ile servis etme, CoreML / ONNX Runtime Mobile ile cihaz üstü çıkarım; gizlilik, gecikme ve maliyet bütçelerine göre lokal/sınır model seçimi
 
 ## 1.4 Akademik Matematiksel Gösterim

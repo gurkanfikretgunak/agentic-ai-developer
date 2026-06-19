@@ -39,7 +39,7 @@ The curriculum is model-pluralist: agents are built against an abstraction layer
 
 - **Composer 2.5** — fast agentic coding loops inside Cursor; the default editor-resident worker model
 - **Claude Opus 4.8** — deep reasoning, architecture decisions, long-context review and judging (LLM-as-a-judge)
-- **Fable 5** — long-horizon autonomous task execution and multi-agent orchestration roles
+- **Fable 5** `badge:Access Closed` — long-horizon autonomous task execution and multi-agent orchestration roles; the access transition has been closed and it is no longer available for new usage
 - **Local & open-weight models** — running quantized models (GGUF) with Ollama / llama.cpp, serving with vLLM on the VPS, on-device inference with CoreML / ONNX Runtime Mobile; choosing local vs. frontier per privacy, latency and cost budgets
 
 ## 1.4 Academic Mathematical Notation

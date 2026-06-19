@@ -50,7 +50,10 @@
       "kicker": "Instructor",
       "role": "Lead Instructor",
       "followers": "Followers",
-      "repos": "Repos"
+      "repos": "Repos",
+      "becomePrefix": "Want to become an instructor? Reach out to",
+      "becomeLink": "MasterFabric Academy",
+      "becomeSubject": "Instructor Application — MasterFabric Academy"
     },
     "enterprise": {
       "kicker": "Enterprise & Large Organizations",
@@ -345,7 +348,10 @@
     }
   },
   "footer": {
-    "line": "academy.masterfabric.co is a MasterFabric subsidiary.",
+    "linePrefix": "academy.masterfabric.co is a ",
+    "lineBrand": "MasterFabric",
+    "lineSuffix": " subsidiary.",
+    "brandUrl": "https://masterfabric.co",
     "sourceLabel": "Source code",
     "sourceUrl": "https://github.com/masterfabric/agentic-ai-developer",
     "sourceText": "github.com/masterfabric/agentic-ai-developer"
