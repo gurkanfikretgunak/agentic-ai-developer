@@ -1,12 +1,16 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { isLocalDevelopment } from "@/lib/env";
 
 /**
  * Fixed construction-style banner shown only during local development.
+ * Hidden on /embed/* so badge iframes stay clean.
  */
 export function DevBanner() {
+  const pathname = usePathname() ?? "";
   if (!isLocalDevelopment()) return null;
+  if (pathname.startsWith("/embed")) return null;
 
   return (
     <>

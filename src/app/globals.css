@@ -811,3 +811,34 @@ body {
   max-width: 100%;
   height: auto;
 }
+
+/* Brand assets — 1:1 post size slider (4 stops: 60–120) */
+.brand-size-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  outline: none;
+  cursor: pointer;
+}
+
+.brand-size-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 0;
+  background: #ffffff;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+
+.brand-size-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 0;
+  background: #ffffff;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+

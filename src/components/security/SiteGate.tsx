@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
 import { Turnstile } from "@/components/security/Turnstile";
 import { isLocalDevelopment } from "@/lib/env";
@@ -29,11 +30,13 @@ function markHuman() {
 
 /**
  * Fullscreen human-verification gate shown once per browser session,
- * before the site content is revealed.
+ * before the site content is revealed. Skipped on /embed/* so badge
+ * iframes stay usable without a challenge.
  */
 export function SiteGate() {
+  const pathname = usePathname() ?? "";
   const human = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-  const visible = !human;
+  const visible = !human && !pathname.startsWith("/embed");
 
   function handleVerify(token: string) {
     if (!token) return;

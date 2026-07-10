@@ -54,5 +54,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
+    {
+      url: `${SITE_URL}/en/brand-assets`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.6,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/en/brand-assets`,
+          tr: `${SITE_URL}/tr/brand-assets`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/tr/brand-assets`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.6,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/en/brand-assets`,
+          tr: `${SITE_URL}/tr/brand-assets`,
+        },
+      },
+    },
   ];
 }

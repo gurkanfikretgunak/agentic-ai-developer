@@ -20,6 +20,12 @@ export function SiteFooter({ dict, locale }: { dict: Dictionary; locale: Locale 
           >
             {dict.footer.certifiedLabel}
           </Link>
+          <Link
+            href={`/${locale}/brand-assets`}
+            className="font-mono text-[11px] tracking-wide text-white/45 transition hover:text-white sm:whitespace-nowrap"
+          >
+            {dict.footer.brandAssetsLabel}
+          </Link>
         </div>
         <p className="font-mono text-[11px] tracking-wide text-white/45 sm:whitespace-nowrap sm:text-right">
           {dict.footer.linePrefix}
