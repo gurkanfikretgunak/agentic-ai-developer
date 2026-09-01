@@ -39,6 +39,14 @@
     "subtitle": "Uçtan Uca Otonom Yapay Zeka Ajanları Geliştirme Yaşam Döngüsü & Çalışma Rehberi",
     "lead": "Bu doküman; Next.js 15, Go (Golang), iOS (Swift), Android (Kotlin), Terminal/CLI Uygulamaları, Cursor IDE, OpenCode, GitHub Copilot, sınır modeller (Composer 2.5, Claude Opus 4.8, Fable 5), lokal barındırılan açık ağırlıklı modeller ve bağımsız bulut sunucuları (VPS) üzerinde çalışan ileri düzey, otonom ve işbirlikçi yapay zeka ajanlarının tasarımı, güvenliği ve yayına alınması süreçlerini içeren resmi akademik müfredat kılavuzudur.",
     "leadExtra": "Bu yapay zeka araçlarını çok iyi biliyoruz ve bu konuda iddialıyız. Yaklaşık dört yıldır müşterilerimize yeni nesil SDLC'leri başarıyla sağlıyoruz.",
+    "academy": {
+      "kicker": "Academy App",
+      "title": "1. Dönem tamamlandı — 2. Dönem başvuruları açık",
+      "body": "Mezunlar diğer tüm derslere ücretsiz erişebilir. Bilgi almak için academy-app.masterfabric.co adresine gidin, ardından yeni döneme başvurun.",
+      "academyCta": "academy-app.masterfabric.co'ya git",
+      "academyUrl": "https://academy-app.masterfabric.co",
+      "applyCta": "2. Döneme başvur"
+    },
     "toolsNote": "Yukarıdaki logolar, aktif olarak kullandığımız yapay zeka araç ve platformlarını belirtir; tüm markalar ilgili sahiplerine aittir.",
     "ctaGuide": "Çalışma Rehberini Aç",
     "ctaWhy": "Bu eğitim neden var?",
@@ -318,11 +326,22 @@
   "apply": {
     "kicker": "Kayıt // 2026 Dönemleri",
     "title": "İletişim & Başvuru",
-    "subtitle": "Bu eğitime katılmak isteyen kişilerin bilgilerini iletmesi gerekmektedir. Formu doldurun — e-posta ile gönderin ya da başvurunuzu sizin yerinize bir AI ajanının derleyip doğrulamasına izin verin.",
+    "subtitle": "1. Dönem tamamlandı. 2. Dönem başvuruları açıldı — formu doldurun, e-posta ile gönderin ya da başvurunuzu bir AI ajanının derleyip doğrulamasına izin verin.",
+    "notice": {
+      "kicker": "Duyuru",
+      "cohort1Title": "1. Dönem başarıyla tamamlandı",
+      "cohort1Body": "Mezunlar academy-app.masterfabric.co üzerinden diğer tüm derslere ücretsiz erişebilir. Bilgi almak için siteye gidin.",
+      "academyCta": "academy-app.masterfabric.co'ya git",
+      "academyUrl": "https://academy-app.masterfabric.co",
+      "cohort2Title": "2. Dönem başvuruları açıldı",
+      "cohort2Body": "Eylül 2026 dönemi için aşağıdaki formdan başvurun. Kapasite 25 kişi olarak devam ediyor."
+    },
     "cohort1Label": "1. Dönem",
     "cohort1Date": "1 Temmuz 2026",
+    "cohort1Status": "Tamamlandı",
     "cohort2Label": "2. Dönem",
     "cohort2Date": "Eylül 2026",
+    "cohort2Status": "Başvurular açık",
     "capacity": "Maksimum kapasite: Dönem başına 25 kişi",
     "emailSubject": "Agentic AI Developer Training — Başvuru",
     "form": {

@@ -16,10 +16,21 @@ export interface ApplyCopy {
   kicker: string;
   title: string;
   subtitle: string;
+  notice: {
+    kicker: string;
+    cohort1Title: string;
+    cohort1Body: string;
+    academyCta: string;
+    academyUrl: string;
+    cohort2Title: string;
+    cohort2Body: string;
+  };
   cohort1Label: string;
   cohort1Date: string;
+  cohort1Status: string;
   cohort2Label: string;
   cohort2Date: string;
+  cohort2Status: string;
   capacity: string;
   emailSubject: string;
   form: {
@@ -79,10 +90,7 @@ export function ApplySection({
   copy: ApplyCopy;
   promptTemplate: string;
 }) {
-  const cohorts = [
-    `${copy.cohort1Label} — ${copy.cohort1Date}`,
-    `${copy.cohort2Label} — ${copy.cohort2Date}`,
-  ];
+  const cohorts = [`${copy.cohort2Label} — ${copy.cohort2Date}`];
 
   const [form, setForm] = useState({
     name: "",
@@ -153,29 +161,85 @@ export function ApplySection({
             {copy.title}
           </h2>
           <p className="mt-3 max-w-2xl text-sm text-white/55">{copy.subtitle}</p>
+
+          <div
+            role="status"
+            className="mt-8 border border-white/30 bg-white/[0.04] p-5 sm:p-6"
+          >
+            <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-white/45">
+              {copy.notice.kicker}
+            </span>
+            <p
+              className="mt-3 text-lg font-bold text-white"
+              style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
+            >
+              {copy.notice.cohort1Title}
+            </p>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/60">
+              {copy.notice.cohort1Body}
+            </p>
+            <a
+              href={copy.notice.academyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block border border-white bg-white px-5 py-2.5 font-mono text-[11px] font-bold uppercase tracking-widest text-black transition hover:bg-black hover:text-white"
+            >
+              {copy.notice.academyCta} ↗
+            </a>
+            <div className="mt-5 border-t border-white/15 pt-5">
+              <p
+                className="text-lg font-bold text-white"
+                style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
+              >
+                {copy.notice.cohort2Title}
+              </p>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/60">
+                {copy.notice.cohort2Body}
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Cohort cards */}
         <div className="mt-10 grid gap-px border border-white/15 bg-white/15 sm:grid-cols-2">
-          {[
-            [copy.cohort1Label, copy.cohort1Date],
-            [copy.cohort2Label, copy.cohort2Date],
-          ].map(([label, date]) => (
-            <div key={label} className="bg-black p-6">
+          <div className="bg-black p-6">
+            <div className="flex items-center justify-between gap-3">
               <span className="font-mono text-[10px] uppercase tracking-widest text-white/45">
-                {label}
+                {copy.cohort1Label}
               </span>
-              <p
-                className="mt-2 text-2xl font-bold text-white"
-                style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
-              >
-                {date}
-              </p>
-              <p className="mt-3 inline-block border border-white/25 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-white/60">
-                {copy.capacity}
-              </p>
+              <span className="border border-white/20 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-white/45">
+                {copy.cohort1Status}
+              </span>
             </div>
-          ))}
+            <p
+              className="mt-2 text-2xl font-bold text-white/55"
+              style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
+            >
+              {copy.cohort1Date}
+            </p>
+            <p className="mt-3 inline-block border border-white/20 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-white/40">
+              {copy.capacity}
+            </p>
+          </div>
+          <div className="bg-black p-6">
+            <div className="flex items-center justify-between gap-3">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-white/45">
+                {copy.cohort2Label}
+              </span>
+              <span className="border border-white bg-white px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-black">
+                {copy.cohort2Status}
+              </span>
+            </div>
+            <p
+              className="mt-2 text-2xl font-bold text-white"
+              style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
+            >
+              {copy.cohort2Date}
+            </p>
+            <p className="mt-3 inline-block border border-white/25 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-white/60">
+              {copy.capacity}
+            </p>
+          </div>
         </div>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_1fr]">

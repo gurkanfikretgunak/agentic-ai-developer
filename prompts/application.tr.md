@@ -13,8 +13,11 @@ gönderilmeye hazır bir e-posta taslağı oluştur.
 - Motivasyon: {{motivation}}
 
 ## Program Bilgileri
-- 1. Dönem başlangıcı: 1 Temmuz 2026
-- 2. Dönem başlangıcı: Eylül 2026
+- 1. Dönem (1 Temmuz 2026) başarıyla tamamlandı. 1. Dönem için yeni
+  başvuru kabul edilmiyor.
+- 1. Dönem mezunları diğer tüm derslere https://academy-app.masterfabric.co
+  üzerinden ücretsiz erişebilir.
+- 2. Dönem başvuruları açıldı. 2. Dönem başlangıcı: Eylül 2026
 - Maksimum kapasite: Dönem başına 25 kişi
 - Başvuru adresi: academy@masterfabric.co
 - Müfredat: 8 domain — ajan mimarisi, tool use & MCP, bellek/state,

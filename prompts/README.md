@@ -23,8 +23,9 @@ and the email composer read these templates at request time and fill the
 
 ## Program facts (single source of truth)
 
-- Cohort 1 starts **July 1, 2026**
-- Cohort 2 starts **September 2026**
+- Cohort 1 (**July 1, 2026**) is **complete** — graduates get free access to
+  all other courses at [academy-app.masterfabric.co](https://academy-app.masterfabric.co)
+- Cohort 2 applications are **open** — starts **September 2026**
 - Maximum capacity: **25 seats per cohort**
 - Applications: **academy@masterfabric.co**
 
