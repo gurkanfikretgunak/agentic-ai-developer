@@ -66,6 +66,7 @@ const COPY: Record<Locale, BrandAssetsCopy> = {
       accepted: "Accepted postcard",
       welcome: "Welcome cohort",
       github: "GitHub badge",
+      wallpapers: "Wallpapers",
     },
     logos: {
       title: "Marks & badge",
@@ -187,6 +188,36 @@ const COPY: Record<Locale, BrandAssetsCopy> = {
       downloadPng: "Download PNG",
       generating: "Generating…",
     },
+    wallpapers: {
+      title: "Device wallpapers",
+      hint: "Official AI Engineer HUD loyalty wallpaper — three-circle Venn, holographic pedestal, Academy seal. Preview in device frames, then download the native iOS or Android export.",
+      platforms: {
+        ios: "iOS",
+        android: "Android",
+      },
+      specs: {
+        ios: "iPhone · 1290 × 2796 · 9:19.5",
+        android: "Android · 1440 × 3200 · 9:20",
+      },
+      downloadPng: "Download wallpaper PNG",
+      previewLabel: "Device preview",
+      analysisTitle: "Composition analysis",
+      analysis: [
+        "Vertical monochrome FUI on #050505 — centered symmetry, bloom on white strokes, soft vignette edges.",
+        "Three-circle Venn: MACHINE LEARNING (top) · SOFTWARE ENGINEERING (bottom-left) · PRODUCT & DATA (bottom-right).",
+        "Overlap labels: Model Deployment · Data Pipelines · System Architecture — core node reads AI ENGINEER.",
+        "Corner HUD readouts (SYS.ARCH / CORE.SYSTEMS) plus base taglines Learn. Build. Scale. / Intelligence by Design.",
+        "Holographic light column into a circular pedestal; MasterFabric Academy metallic seal locked at the bottom safe zone.",
+        "Safe zones: Venn sits below Dynamic Island / punch-hole; Academy badge clears the home / gesture bar.",
+      ],
+      howTitle: "How to set it",
+      howSteps: [
+        "Download the PNG for your platform (iOS or Android).",
+        "Open Photos / Gallery, select the image, then Set as Wallpaper.",
+        "Prefer Lock Screen + Home Screen so the Academy seal stays above the dock.",
+        "Do not stretch, recolor, or crop the Venn — keep the full HUD composition.",
+      ],
+    },
   },
   tr: {
     kicker: PAGE.tr.kicker,
@@ -197,6 +228,7 @@ const COPY: Record<Locale, BrandAssetsCopy> = {
       accepted: "Kabul kartı",
       welcome: "Kohort karşılama",
       github: "GitHub rozeti",
+      wallpapers: "Duvar kağıtları",
     },
     logos: {
       title: "İşaretler & rozet",
@@ -318,12 +350,45 @@ const COPY: Record<Locale, BrandAssetsCopy> = {
       downloadPng: "PNG indir",
       generating: "Üretiliyor…",
     },
+    wallpapers: {
+      title: "Cihaz duvar kağıtları",
+      hint: "Resmi AI Engineer HUD loyalty wallpaper — üç daireli Venn, holografik kaide, Akademi mührü. Cihaz çerçevesinde önizleyin, iOS veya Android native export’u indirin.",
+      platforms: {
+        ios: "iOS",
+        android: "Android",
+      },
+      specs: {
+        ios: "iPhone · 1290 × 2796 · 9:19.5",
+        android: "Android · 1440 × 3200 · 9:20",
+      },
+      downloadPng: "Duvar kağıdı PNG indir",
+      previewLabel: "Cihaz önizleme",
+      analysisTitle: "Kompozisyon analizi",
+      analysis: [
+        "Dikey monokrom FUI, #050505 zemin — merkez simetri, beyaz stroke’larda bloom, kenarlarda soft vignette.",
+        "Üç daireli Venn: MACHINE LEARNING (üst) · SOFTWARE ENGINEERING (sol alt) · PRODUCT & DATA (sağ alt).",
+        "Kesişim etiketleri: Model Deployment · Data Pipelines · System Architecture — çekirdek düğüm: AI ENGINEER.",
+        "Köşe HUD okumaları (SYS.ARCH / CORE.SYSTEMS) ve alt sloganlar: Learn. Build. Scale. / Intelligence by Design.",
+        "Holografik ışık sütunu dairesel kaideye iner; MasterFabric Academy metalik mühür alt safe zone’da kilitlenir.",
+        "Safe zone: Venn, Dynamic Island / punch-hole altında; Akademi rozeti home / gesture bar’ın üstünde kalır.",
+      ],
+      howTitle: "Nasıl ayarlanır",
+      howSteps: [
+        "Platformunuza göre PNG’yi indirin (iOS veya Android).",
+        "Fotoğraflar / Galeri’de görseli seçip Duvar Kağıdı Olarak Ayarla’ya dokunun.",
+        "Akademi mührü dock’un üstünde kalsın diye Kilit + Ana Ekran’ı tercih edin.",
+        "Venn’i germeyin, renklendirmeyin veya kırpmayın — HUD kompozisyonunun tamamını koruyun.",
+      ],
+    },
   },
 };
 
 const DEFAULTS: Record<
   Locale,
-  { accepted: AcceptedPostcardData; welcome: WelcomeCohortData }
+  {
+    accepted: AcceptedPostcardData;
+    welcome: WelcomeCohortData;
+  }
 > = {
   en: {
     accepted: {

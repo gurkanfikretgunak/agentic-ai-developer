@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Ensure credential CSV/PDF files ship with the serverless function on Vercel.
-  outputFileTracingIncludes: {
+  // Credential PDFs live on GitHub; never bundle them into serverless functions.
+  outputFileTracingExcludes: {
     "/**": ["./certificated-developers/**"],
   },
   images: {

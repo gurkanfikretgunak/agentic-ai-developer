@@ -100,7 +100,7 @@ export default async function CertifiedDevelopersPage({
 
   const dict = await getDictionary(locale);
   const copy = COPY[locale];
-  const developers = getCertifiedDevelopers();
+  const developers = await getCertifiedDevelopers();
   const repoUrl = dict.footer.sourceUrl.replace(/\/$/, "");
 
   return (

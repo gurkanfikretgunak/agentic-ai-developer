@@ -13,8 +13,11 @@ academy@masterfabric.co.
 - Motivation: {{motivation}}
 
 ## Program Facts
-- Cohort 1 starts: July 1, 2026
-- Cohort 2 starts: September 2026
+- Cohort 1 (July 1, 2026) has been successfully completed. New applications
+  are not accepted for Cohort 1.
+- Cohort 1 graduates can access all other courses for free at
+  https://academy-app.masterfabric.co
+- Cohort 2 applications are now open. Cohort 2 starts: September 2026
 - Maximum capacity: 25 seats per cohort
 - Applications: academy@masterfabric.co
 - Curriculum: 8 domains — agent architecture, tool use & MCP, memory/state,

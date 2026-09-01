@@ -11,6 +11,7 @@ import { MasterFabricLogo } from "@/components/brand/MasterFabricLogo";
 import { CertificateSection } from "@/components/certificate/CertificateSection";
 import { WeightBars } from "@/components/charts/WeightBars";
 import { EvolutionSection } from "@/components/evolution/EvolutionSection";
+import { AcademyAppBanner } from "@/components/hero/AcademyAppBanner";
 import { EnterpriseCard } from "@/components/hero/EnterpriseCard";
 import { OpsHighlights } from "@/components/hero/OpsHighlights";
 import { TechLead } from "@/components/hero/TechLead";
@@ -87,6 +88,11 @@ export default async function LandingPage({
           <p className="mt-4 max-w-2xl text-sm font-medium leading-relaxed text-white/75">
             {dict.hero.leadExtra}
           </p>
+
+          <AcademyAppBanner
+            copy={dict.hero.academy}
+            applyHref={`/${locale}#apply`}
+          />
 
           <OpsHighlights copy={dict.hero.ops} />
 

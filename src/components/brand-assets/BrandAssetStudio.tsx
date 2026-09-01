@@ -18,6 +18,10 @@ import {
   GithubBadgeGuide,
   type GithubBadgeCopy,
 } from "@/components/brand-assets/GithubBadgeGuide";
+import {
+  WallpaperGuide,
+  type WallpaperCopy,
+} from "@/components/brand-assets/WallpaperGuide";
 import { MasterFabricLogo } from "@/components/brand/MasterFabricLogo";
 
 export interface BrandAssetsCopy {
@@ -29,6 +33,7 @@ export interface BrandAssetsCopy {
     accepted: string;
     welcome: string;
     github: string;
+    wallpapers: string;
   };
   logos: {
     title: string;
@@ -74,11 +79,12 @@ export interface BrandAssetsCopy {
     downloadPng: string;
     generating: string;
   };
+  wallpapers: WallpaperCopy;
 }
 
 const EXPORT_WIDTH = 1080;
 
-type TabId = "logos" | "accepted" | "welcome" | "github";
+type TabId = "logos" | "accepted" | "welcome" | "github" | "wallpapers";
 
 function triggerDownload(href: string, filename: string) {
   const a = document.createElement("a");
@@ -165,6 +171,7 @@ export function BrandAssetStudio({
     { id: "accepted", label: copy.tabs.accepted },
     { id: "welcome", label: copy.tabs.welcome },
     { id: "github", label: copy.tabs.github },
+    { id: "wallpapers", label: copy.tabs.wallpapers },
   ];
 
   async function exportAccepted() {
@@ -274,6 +281,8 @@ export function BrandAssetStudio({
       )}
 
       {tab === "github" && <GithubBadgeGuide copy={copy.github} />}
+
+      {tab === "wallpapers" && <WallpaperGuide copy={copy.wallpapers} />}
 
       {tab === "accepted" && (
         <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">

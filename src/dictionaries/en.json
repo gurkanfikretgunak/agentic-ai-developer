@@ -39,6 +39,14 @@
     "subtitle": "End-to-End Autonomous AI Agent Development Lifecycle & Study Guide",
     "lead": "This document is the official academic curriculum guide covering the design, security and deployment of advanced, autonomous and collaborative AI agents running on Next.js 15, Go (Golang), iOS (Swift), Android (Kotlin), Terminal/CLI applications, Cursor IDE, OpenCode, GitHub Copilot, frontier models (Composer 2.5, Claude Opus 4.8, Fable 5), locally hosted open-weight models and independent cloud servers (VPS).",
     "leadExtra": "We know these AI tools inside out — and we stand behind that. For nearly four years, we have been delivering next-generation SDLCs to our customers, successfully and at scale.",
+    "academy": {
+      "kicker": "Academy App",
+      "title": "Cohort 1 is complete — Cohort 2 is open",
+      "body": "Graduates can access all other courses for free. Visit academy-app.masterfabric.co to learn more, then apply for the next cohort.",
+      "academyCta": "Open academy-app.masterfabric.co",
+      "academyUrl": "https://academy-app.masterfabric.co",
+      "applyCta": "Apply to Cohort 2"
+    },
     "toolsNote": "The logos above indicate the AI tools and platforms we actively use; all trademarks belong to their respective owners.",
     "ctaGuide": "Open the Study Guide",
     "ctaWhy": "Why does this exist?",
@@ -318,11 +326,22 @@
   "apply": {
     "kicker": "Admissions // 2026 Cohorts",
     "title": "Contact & Apply",
-    "subtitle": "Participants who wish to join must submit their information. Fill in the form — send it by email, or let an AI agent assemble and verify your application for you.",
+    "subtitle": "Cohort 1 is complete. Cohort 2 applications are now open — fill in the form, send it by email, or let an AI agent assemble and verify your application.",
+    "notice": {
+      "kicker": "Notice",
+      "cohort1Title": "Cohort 1 has been successfully completed",
+      "cohort1Body": "Graduates can access all other courses for free at academy-app.masterfabric.co. Visit the site to learn more.",
+      "academyCta": "Open academy-app.masterfabric.co",
+      "academyUrl": "https://academy-app.masterfabric.co",
+      "cohort2Title": "Cohort 2 applications are now open",
+      "cohort2Body": "Apply below for the September 2026 cohort. Capacity remains 25 seats."
+    },
     "cohort1Label": "Cohort 1",
     "cohort1Date": "July 1, 2026",
+    "cohort1Status": "Completed",
     "cohort2Label": "Cohort 2",
     "cohort2Date": "September 2026",
+    "cohort2Status": "Applications open",
     "capacity": "Max capacity: 25 seats per cohort",
     "emailSubject": "Agentic AI Developer Training — Application",
     "form": {
